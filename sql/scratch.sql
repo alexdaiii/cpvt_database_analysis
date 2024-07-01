@@ -4,6 +4,7 @@ SELECT i.individual_id,
        z.zygosity,
        vi.variant_inheritance AS inheritance,
        v.hgvs_string,
+       sv.p_hgvs_string,
        itp.publication_id,
        p.title,
        p.first_author,
@@ -27,6 +28,8 @@ FROM individual i
                    ON i.individual_id = itp.individual_id
          LEFT JOIN publication p
                    ON itp.publication_id = p.publication_id
+         LEFT JOIN sequence_variant sv
+                   ON v.sequence_variant_id = sv.sequence_variant_id
 ORDER BY i.individual_id;
 
 
