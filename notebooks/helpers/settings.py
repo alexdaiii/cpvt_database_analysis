@@ -30,7 +30,6 @@ class LogLevels(Enum):
 
 
 class Settings(BaseSettings):
-
     # PostgreSQL
     postgresql_host: str = "localhost"
     postgresql_username: str = "postgres"

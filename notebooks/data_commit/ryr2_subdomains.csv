@@ -1,0 +1,23 @@
+domains,subdomains,subdomain_precedence
+NTD,NTD-A,
+SPRY,NTD-B,
+JSol,NSol,
+BSol,SPRY1,
+SCLP,SPRY2,
+CSol,SPRY3,
+TaF ,RY1&2,
+TM,JSol,
+CTD,BSol1,
+,BSol2,
+,BSol3,
+,RY3&4,
+,SCLP,
+,CSol,
+,EF1&2,TRUE
+,TaF,
+,TM,
+,Sx,TRUE
+,pVSD,TRUE
+,Pore,TRUE
+,CTD,
+,ZnF,TRUE
