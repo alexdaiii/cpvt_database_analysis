@@ -17,6 +17,7 @@ psycopg = {extras = ["binary"], version = "^3.1.19"}
 openpyxl = "^3.1.5"
 scipy = "^1.14.0"
 scikit-posthocs = "^0.9.0"
+black = {extras = ["jupyter"], version = "^24.4.2"}
 
 
 [tool.poetry.group.dev.dependencies]
