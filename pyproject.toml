@@ -13,13 +13,14 @@ pydantic-settings = "^2.3.4"
 pandas = "^2.2.2"
 seaborn = "^0.13.2"
 jupyter = "^1.0.0"
-psycopg = {extras = ["binary"], version = "^3.1.19"}
+psycopg = { extras = ["binary"], version = "^3.1.19" }
 openpyxl = "^3.1.5"
 scipy = "^1.14.0"
 scikit-posthocs = "^0.9.0"
-black = {extras = ["jupyter"], version = "^24.4.2"}
+black = { extras = ["jupyter"], version = "^24.4.2" }
 scikit-learn = "^1.5.1"
 duckdb = "^1.0.0"
+gget = "^0.28.6"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -28,3 +29,8 @@ ruff = "^0.5.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+# In addition to the standard set of exclusions, omit all tests, plus a specific file.
+extend-exclude = ["*.r.ipynb"]
