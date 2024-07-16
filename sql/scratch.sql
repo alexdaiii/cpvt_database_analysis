@@ -29,4 +29,19 @@ WHERE 1 = 1
   AND t.treatment_name = 'Flecainide'
   AND sv.p_posedit_str IS NOT NULL
 GROUP BY sv.p_posedit_str, treatment_name, effective
-ORDER BY num_patients DESC
+ORDER BY num_patients DESC;
+
+
+SELECT individual_id,
+       CASE WHEN etp.edit_type_id IS NULL
+THEN etc.name
+FROM individual_variant iv
+         JOIN variant v
+              ON iv.variant_id = v.variant_id
+         LEFT JOIN sequence_variant sv
+                   ON v.sequence_variant_id = sv.sequence_variant_id
+         LEFT JOIN edit_type etp
+                   ON sv.p_edit_type = etp.edit_type_id
+         LEFT JOIN edit_type etc
+                   ON sv.c_edit_type = etc.edit_type_id
+;
