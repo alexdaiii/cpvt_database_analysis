@@ -21,6 +21,7 @@ black = { extras = ["jupyter"], version = "^24.4.2" }
 scikit-learn = "^1.5.1"
 duckdb = "^1.0.0"
 gget = "^0.28.6"
+biopython = "^1.84"
 
 
 [tool.poetry.group.dev.dependencies]

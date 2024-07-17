@@ -21,7 +21,7 @@ WHERE 1 = 1
           FROM cpvt_patients_v)
   AND tr.patient_id
     IN (
-          -- ONLY PATIENTS WHOARE TAKING BETA BLOCKERS
+          -- ONLY PATIENTS WHO ARE TAKING BETA BLOCKERS
           SELECT tr.patient_id
           FROM treatment_record tr
                    JOIN
