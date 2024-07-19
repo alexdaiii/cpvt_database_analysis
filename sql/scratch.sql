@@ -33,8 +33,9 @@ ORDER BY num_patients DESC;
 
 
 SELECT individual_id,
-       CASE WHEN etp.edit_type_id IS NULL
-THEN etc.name
+       CASE
+           WHEN etp.edit_type_id IS NULL
+               THEN etc.name end
 FROM individual_variant iv
          JOIN variant v
               ON iv.variant_id = v.variant_id
