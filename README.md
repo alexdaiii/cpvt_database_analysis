@@ -16,8 +16,10 @@ Docker Compose can be found on [Docker's website](https://docs.docker.com/engine
 
 This configuration will mount
 the `init` directory to `/docker-entrypoint-initdb.d` in the PostgreSQL container, which will load the data
-when the container is started (assuming that the database is empty) and create a volume for the database data. Also,
-`pgadmin` is started to allow you to interact with the database, which will be available
+when the container is started (assuming that the database is empty) and create a volume for the database data.
+The database will be available at `localhost:5432`.
+
+Also,`pgadmin` is started to allow you to interact with the database, which will be available
 at [http://localhost:5050](http://localhost:5050).
 
 To start the database (with the terminal detached), run:
@@ -54,8 +56,7 @@ pip install -r requirements.txt
 The `hgvs` package requires the `psycopg2` package to be installed. `psycopg2` requires PostgreSQL to be installed on
 your system.
 If you don't have PostgreSQL installed, you can use Docker+Postgres and the `psycopg2-binary` package instead.
-If you encounter issues with installing `psycopg` and you and want to use the binary distribution of `psycopg2`
-(e.g., `psycopg2-binary`), you can install the `hgvs` package with the following commands:
+If you encounter issues with installing `psycopg`, you can install the `hgvs` package with the following commands:
 
 ```bash
 poetry install --no-root
