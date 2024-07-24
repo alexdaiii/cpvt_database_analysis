@@ -1,0 +1,114 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: CPVT Database Analysis
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Alexander
+    family-names: Chang
+    orcid: 'https://orcid.org/0009-0002-4273-2595'
+    affiliation: >-
+      Department of Physiology and Cellular Biophysics,
+      Clyde and Helen Wu Center for Molecular Cardiology,
+      Columbia University Vagelos College of Physicians &
+      Surgeons
+  - given-names: Halil
+    family-names: Beqaj
+    affiliation: >-
+      Department of Physiology and Cellular Biophysics,
+      Clyde and Helen Wu Center for Molecular Cardiology,
+      Columbia University Vagelos College of Physicians &
+      Surgeons
+  - given-names: Leah
+    family-names: Sittenfeld
+    affiliation: >-
+      Department of Physiology and Cellular Biophysics,
+      Clyde and Helen Wu Center for Molecular Cardiology,
+      Columbia University Vagelos College of Physicians &
+      Surgeons
+    orcid: 'https://orcid.org/0000-0001-8349-0663'
+  - given-names: Marco
+    family-names: Miotto
+    affiliation: >-
+      Department of Physiology and Cellular Biophysics,
+      Clyde and Helen Wu Center for Molecular Cardiology,
+      Columbia University Vagelos College of Physicians &
+      Surgeons
+    orcid: 'https://orcid.org/0000-0001-8851-4863'
+  - given-names: Haikel
+    family-names: Dridi
+    affiliation: >-
+      Department of Physiology and Cellular Biophysics,
+      Clyde and Helen Wu Center for Molecular Cardiology,
+      Columbia University Vagelos College of Physicians &
+      Surgeons
+    orcid: 'https://orcid.org/0000-0001-9533-7367'
+  - given-names: Gloria
+    family-names: Willson
+    orcid: 'https://orcid.org/0000-0001-8664-1236'
+    affiliation: >-
+      Augustus C. Long Health Sciences Library, Columbia
+      University Medical Center
+  - given-names: Carolyn
+    family-names: Martinez Jorge
+    affiliation: >-
+      Department of Physiology and Cellular Biophysics,
+      Clyde and Helen Wu Center for Molecular Cardiology,
+      Columbia University Vagelos College of Physicians &
+      Surgeons
+  - given-names: Jaan
+    family-names: Altosaar Li
+    affiliation: >-
+      Department of Biomedical Informatics, Columbia
+      University Medical Center
+    orcid: 'https://orcid.org/0000-0003-1294-4159'
+  - given-names: Steven
+    family-names: Reiken
+    affiliation: >-
+      Department of Physiology and Cellular Biophysics,
+      Clyde and Helen Wu Center for Molecular Cardiology,
+      Columbia University Vagelos College of Physicians &
+      Surgeons
+    orcid: 'https://orcid.org/0000-0002-5807-3574'
+  - given-names: Yang
+    family-names: Liu
+    affiliation: >-
+      Department of Physiology and Cellular Biophysics,
+      Clyde and Helen Wu Center for Molecular Cardiology,
+      Columbia University Vagelos College of Physicians &
+      Surgeons
+    orcid: 'https://orcid.org/0000-0002-8343-4431'
+  - affiliation: >-
+      Department of Physiology and Cellular Biophysics,
+      Clyde and Helen Wu Center for Molecular Cardiology,
+      Columbia University Vagelos College of Physicians &
+      Surgeons
+    given-names: Zonglin
+    family-names: Dai
+    orcid: 'https://orcid.org/0000-0002-4005-1297'
+  - given-names: Andrew
+    family-names: Marks
+    affiliation: >-
+      Department of Physiology and Cellular Biophysics,
+      Clyde and Helen Wu Center for Molecular Cardiology,
+      Columbia University Vagelos College of Physicians &
+      Surgeons
+    orcid: 'https://orcid.org/0000-0002-4316-5775'
+repository-code: 'https://github.com/alexdaiii/cpvt_database_analysis'
+abstract: >-
+  This repository contains the code used to analyze the CPVT
+  database and generate figures and tables for the
+  manuscript "RYR2 Variant Location and Age of Onset in
+  Catecholaminergic Polymorphic Ventricular Tachycardia - A
+  systematic review and meta-analysis of case-based
+  literature".
+keywords:
+  - cpvt
+  - python
+  - statistics
+license: MIT
+commit: df0aa0e5306b53faaf25c642afa2644c292ab2e7
