@@ -23,6 +23,7 @@ duckdb = "^1.0.0"
 gget = "^0.28.6"
 biopython = "^1.84"
 rpy2 = "^3.5.16"
+nbconvert = "^7.16.4"
 
 
 [tool.poetry.group.dev.dependencies]
