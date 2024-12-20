@@ -1,0 +1,28 @@
+name: cpvt_database_analysis
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - pip
+  - jupyter
+  - pandas
+  - numpy
+  - seaborn
+  - matplotlib
+  - openpyxl
+  - scipy
+  - tqdm
+  - pyarrow
+  - scikit-learn
+  - r-base
+  - r-essentials
+  - r-here
+  - r-rstatix
+  - r-effectsize
+  - r-rcompanion
+  - pip:
+      - sqlalchemy
+      - psycopg[binary]
+      - pydantic-settings
+      - pydantic
+      - duckdb
