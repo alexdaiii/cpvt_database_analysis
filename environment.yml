@@ -19,7 +19,6 @@ dependencies:
   - r-here
   - r-rstatix
   - r-effectsize
-  - r-rcompanion
   - pip:
       - sqlalchemy
       - psycopg[binary]
