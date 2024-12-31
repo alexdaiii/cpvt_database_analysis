@@ -14,6 +14,7 @@ dependencies:
   - tqdm
   - pyarrow
   - scikit-learn
+  - scikit-posthocs
   - r-base
   - r-essentials
   - r-here
@@ -25,4 +26,5 @@ dependencies:
       - pydantic-settings
       - pydantic
       - duckdb
+      - pyyaml
       - cpvt-database-models --index-url https://gitlab.com/api/v4/projects/60969577/packages/pypi/simple

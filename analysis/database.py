@@ -1,6 +1,8 @@
 from contextlib import contextmanager
 
+import yaml
 from cpvt_database_models.database import Base
+from pydantic import BaseModel, computed_field
 from sqlalchemy import Engine
 from sqlalchemy.orm import mapped_column, Mapped
 import sqlalchemy as sa
@@ -44,4 +46,21 @@ def get_engine():
         if _engine:
             _engine.dispose()
 
-__all__ = ["PublicationROBType", "PublicationType", "get_engine"]
+
+class ConfigYaml(BaseModel):
+    version: str
+
+    @computed_field
+    @property
+    def version_for_dir(self) -> str:
+        return self.version.replace(".", "_")
+
+def get_config():
+    with open("../config.yaml") as f:
+        config = yaml.safe_load(f)
+
+    return ConfigYaml(**config)
+
+
+
+__all__ = ["PublicationROBType", "PublicationType", "get_engine", "get_config"]
