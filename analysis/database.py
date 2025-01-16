@@ -1,4 +1,5 @@
 from contextlib import contextmanager
+from typing import Hashable
 
 import yaml
 from cpvt_database_models.database import Base
@@ -29,6 +30,8 @@ class PublicationType(Base):
     publication_type: Mapped[str] = mapped_column()
 
 
+
+
 # make sqalchemy create these tables (note all the other tables are already created)
 @contextmanager
 def get_engine():
@@ -47,8 +50,35 @@ def get_engine():
             _engine.dispose()
 
 
+class FigurePalette(BaseModel):
+    default_bar: str
+    cat_palette: list[str]
+
+class FigureParams(BaseModel):
+    fig_size: tuple[float, float] | None = None
+    title: str | None = None
+    xlabel: str | None = None
+    ylabel: str | None = None
+    xticklabels: dict[Hashable, str] | None = None
+    yticklabels: dict[Hashable, str] | None = None
+
+    x_label_fontsize: int = 10
+    y_label_fontsize: int = 10
+    title_fontsize: int = 10
+    x_tick_fontsize: int = 8
+    y_tick_fontsize: int = 8
+
+    panels: dict[str, "FigureParams"] | None = None
+
 class ConfigYaml(BaseModel):
     version: str
+
+    figure_palette: FigurePalette
+
+    figure2: FigureParams
+    figure3: FigureParams
+    figure4: FigureParams
+    figure6: FigureParams
 
     @computed_field
     @property

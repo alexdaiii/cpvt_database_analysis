@@ -1,1 +1,118 @@
-version: 0.3.0
+version: 0.3.1
+figure_palette:
+  default_bar: lightgrey
+  cat_palette:
+    - "#1b9e77"
+    - "#d95f02"
+figure2:
+  panels:
+    panel_a:
+      fig_size: [ 4.25, 2.75 ]
+      title: Primary Diagnosis of Patients
+      xlabel: Number of patients
+      ylabel: Diagnosis
+    panel_b:
+      fig_size: [ 4.25, 2.75 ]
+      title: Age of Onset of CPVT Patients
+      xlabel: Age of onset (years)
+      ylabel: Number of patients
+    panel_c:
+      fig_size: [ 4.25, 4.25 ]
+      title: Age of Onset vs Incidence of PVT
+      xlabel: Condition
+      xticklabels:
+        False: No PVT
+        True: PVT
+      ylabel: Age of onset (years)
+    panel_d:
+      fig_size: [ 4.25, 4.25 ]
+      title: Age of Onset vs Incidence of Syncope
+      xlabel: Condition
+      xticklabels:
+        False: No Syncope
+        True: Syncope
+      ylabel: Age of onset (years)
+figure3:
+  fig_size: [ 2.833333, 2.5 ]
+  xlabel: Number of patients
+  panels:
+    panel_a:
+      title: Heart Structure Abnormality
+      ylabel: Condition
+      yticklabels:
+        False: "No heart\nstructure\nabnormality"
+        True: "Heart structure\nabnormality"
+    panel_b:
+      title: Exercise-induced PVT
+      ylabel: Condition
+      yticklabels:
+        False: No PVT
+        True: PVT
+    panel_c:
+      title: Exercise-induced Syncope
+      ylabel: Condition
+      yticklabels:
+        False: No Syncope
+        True: Syncope
+    panel_d:
+      title: Exercise-induced SCA
+      ylabel: Condition
+      yticklabels:
+        False: No SCA
+        True: SCA
+    panel_e:
+      title: Patient Sex
+      ylabel: Sex
+      yticklabels:
+        female: Female
+        male: Male
+    panel_f:
+      title: Inheritance
+      ylabel: Inheritance
+      yticklabels:
+        inherited: Inherited
+        spontaneous: de novo
+    panel_g:
+      title: Family history of SCD
+      ylabel: Family history
+      yticklabels:
+        False: "No family\nhistory SCD"
+        True: "Family\nhistory SCD"
+    panel_h:
+      title: Abnormal ECG at Rest
+      ylabel: Condition
+      yticklabels:
+        False: "Normal ECG\nat rest"
+        True: "Abnormal ECG\nat rest"
+figure4:
+  fig_size: [ 8.5, 2.75 ]
+  panels:
+    panel_a:
+      title: Number of CPVT Patients by Variant, Top 20
+      xlabel: Variant
+      ylabel: Number of patients
+    panel_b:
+      title: Number of Missense Variants by RYR2 Exon
+      xlabel: Exon
+      ylabel: Number of variants
+    panel_c:
+      title: Age of Onset by Exon
+      xlabel: Exon
+      ylabel: Age of onset (years)
+figure6:
+  panels:
+    panel_d:
+      fig_size: [ 4.25, 3.5 ]
+      title: Age of Onset by RYR2 Domain
+      xlabel: Domain
+      ylabel: Age of onset (years)
+    panel_e:
+      fig_size: [ 4.25, 3.65 ]
+      title: Age of Onset by RYR2 Subdomain
+      xlabel: Subdomain
+      ylabel: Age of onset (years)
+
+
+
+
+
