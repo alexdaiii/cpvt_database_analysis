@@ -1,91 +1,100 @@
 version: 0.3.1
 figure_palette:
   default_bar: lightgrey
-  cat_palette:
-    - "#1b9e77"
-    - "#d95f02"
+  default_dot: dimgray
+  box_median_props:
+    color: black
+    linewidth: 2
+  cat_palette: Set1
 figure2:
   panels:
     panel_a:
-      fig_size: [ 4.25, 2.75 ]
-      title: Primary Diagnosis of Patients
+      fig_size: [ 3.25 , 2.7 ]
+      title: Diagnosis of Patients
       xlabel: Number of patients
       ylabel: Diagnosis
     panel_b:
-      fig_size: [ 4.25, 2.75 ]
+      fig_size: [ 3.25 , 2.7 ]
       title: Age of Onset of CPVT Patients
       xlabel: Age of onset (years)
       ylabel: Number of patients
     panel_c:
-      fig_size: [ 4.25, 4.25 ]
-      title: Age of Onset vs Incidence of PVT
-      xlabel: Condition
+      fig_size: [ 3.25 , 3.25 ]
+      #title: Age of Onset vs Incidence of PVT
+      #xlabel: Condition
       xticklabels:
         False: No PVT
         True: PVT
       ylabel: Age of onset (years)
     panel_d:
-      fig_size: [ 4.25, 4.25 ]
-      title: Age of Onset vs Incidence of Syncope
-      xlabel: Condition
+      fig_size: [ 3.25, 3.25 ]
+      #title: Age of Onset vs Incidence of Syncope
+      #xlabel: Condition
       xticklabels:
         False: No Syncope
         True: Syncope
       ylabel: Age of onset (years)
 figure3:
-  fig_size: [ 2.833333, 2.5 ]
-  xlabel: Number of patients
+  fig_size: [ 1.625, 2 ]
   panels:
     panel_a:
-      title: Heart Structure Abnormality
-      ylabel: Condition
-      yticklabels:
-        False: "No heart\nstructure\nabnormality"
-        True: "Heart structure\nabnormality"
+      #title: Heart Structure Abnormality
+      ylabel: Number of patients
+      #xlabel: Condition
+      xticklabels:
+        False: Normal
+        True: "Heart\nstructure\nabnormality"
     panel_b:
-      title: Exercise-induced PVT
-      ylabel: Condition
-      yticklabels:
+      #title: Exercise-induced PVT
+      ylabel: Number of patients
+      #xlabel: Condition
+      xticklabels:
         False: No PVT
         True: PVT
     panel_c:
-      title: Exercise-induced Syncope
-      ylabel: Condition
-      yticklabels:
-        False: No Syncope
+      #title: Exercise-induced Syncope
+      ylabel: Number of patients
+      #xlabel: Condition
+      xticklabels:
+        False: "No\nSyncope"
         True: Syncope
     panel_d:
-      title: Exercise-induced SCA
-      ylabel: Condition
-      yticklabels:
+      #title: Exercise-induced SCA
+      ylabel: Number of patients
+      #xlabel: Condition
+      xticklabels:
         False: No SCA
         True: SCA
     panel_e:
-      title: Patient Sex
-      ylabel: Sex
-      yticklabels:
+      #title: Patient Sex
+      ylabel: Number of patients
+      #xlabel: Sex
+      xticklabels:
         female: Female
         male: Male
     panel_f:
-      title: Inheritance
-      ylabel: Inheritance
-      yticklabels:
+      #title: Inheritance
+      ylabel: Number of variants
+      #xlabel: Inheritance
+      xticklabels:
         inherited: Inherited
         spontaneous: de novo
     panel_g:
-      title: Family history of SCD
-      ylabel: Family history
-      yticklabels:
-        False: "No family\nhistory SCD"
-        True: "Family\nhistory SCD"
+      #title: Family history of SCD
+      ylabel: Number of patients
+      #xlabel: Family history
+      xticklabels:
+        False: "No family\nhistory\nSCD"
+        True: "Family\nhistory\nSCD"
     panel_h:
-      title: Abnormal ECG at Rest
-      ylabel: Condition
-      yticklabels:
-        False: "Normal ECG\nat rest"
-        True: "Abnormal ECG\nat rest"
+      #title: Abnormal ECG at Rest
+      ylabel: Number of patients
+      #xlabel: Condition
+      xticklabels:
+        False: "Normal\nECG\nat rest"
+        True: "Abnormal\nECG\nat rest"
 figure4:
-  fig_size: [ 8.5, 2.75 ]
+  fig_size: [ 6.5, 2.75 ]
   panels:
     panel_a:
       title: Number of CPVT Patients by Variant, Top 20
@@ -101,15 +110,41 @@ figure4:
       ylabel: Age of onset (years)
 figure6:
   panels:
-    panel_d:
-      fig_size: [ 4.25, 3.5 ]
+    panel_c:
+      fig_size: [ 3.25, 3.25 ]
       title: Age of Onset by RYR2 Domain
       xlabel: Domain
       ylabel: Age of onset (years)
-    panel_e:
-      fig_size: [ 4.25, 3.65 ]
+    panel_d:
+      fig_size: [ 3.25, 3.5 ]
       title: Age of Onset by RYR2 Subdomain
       xlabel: Subdomain
+      ylabel: Age of onset (years)
+reviewer2_1:
+  panels:
+    panel_a:
+      fig_size: [ 2.167, 2.167 ]
+      title: "Age of Onset vs\nIncidence of PVT"
+      #xlabel: Condition
+      xticklabels:
+        False: No PVT
+        True: PVT
+      ylabel: Age of onset (years)
+    panel_b:
+      fig_size: [ 2.167, 2.167 ]
+      title: "Age of Onset vs\nIncidence of Syncope"
+      #xlabel: Condition
+      xticklabels:
+        False: No Syncope
+        True: Syncope
+      ylabel: Age of onset (years)
+    panel_c:
+      fig_size: [ 2.167, 2.167 ]
+      title: "Age of Onset vs\nIncidence of SCA"
+      #xlabel: Condition
+      xticklabels:
+        False: No SCA
+        True: SCA
       ylabel: Age of onset (years)
 
 

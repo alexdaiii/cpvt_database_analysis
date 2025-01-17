@@ -1,8 +1,10 @@
 from contextlib import contextmanager
-from typing import Hashable
+from typing import Hashable, Any, Literal
 
 import yaml
 from cpvt_database_models.database import Base
+from matplotlib import pyplot as plt
+import seaborn as sns
 from pydantic import BaseModel, computed_field
 from sqlalchemy import Engine
 from sqlalchemy.orm import mapped_column, Mapped
@@ -50,9 +52,13 @@ def get_engine():
             _engine.dispose()
 
 
+
+
 class FigurePalette(BaseModel):
     default_bar: str
-    cat_palette: list[str]
+    default_dot: str
+    box_median_props: dict[Hashable, Any] | None = None
+    cat_palette: str
 
 class FigureParams(BaseModel):
     fig_size: tuple[float, float] | None = None
@@ -80,10 +86,28 @@ class ConfigYaml(BaseModel):
     figure4: FigureParams
     figure6: FigureParams
 
+    reviewer2_1: FigureParams
+
     @computed_field
     @property
     def version_for_dir(self) -> str:
         return self.version.replace(".", "_")
+
+
+def set_figure_size(
+        figure_params: FigureParams,
+        x_tick_ha: Literal["center", "right", "left"] = "center",
+        x_tick_rotation: int = 0,
+):
+    plt.xlabel(figure_params.xlabel, fontsize=figure_params.x_label_fontsize)
+    plt.ylabel(figure_params.ylabel, fontsize=figure_params.y_label_fontsize)
+    plt.title(figure_params.title, fontsize=figure_params.title_fontsize)
+    plt.xticks(rotation=x_tick_rotation, ha=x_tick_ha,
+               fontsize=figure_params.x_tick_fontsize)
+    plt.yticks(fontsize=figure_params.y_tick_fontsize)
+    sns.despine()
+    plt.tight_layout()
+
 
 def get_config():
     with open("../config.yaml") as f:
