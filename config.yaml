@@ -148,6 +148,16 @@ reviewer2_1:
         False: No SCA
         True: SCA
       ylabel: Age of onset (years)
+s_figure_2:
+  fig_size: [ 8.5, 4.5 ]
+  title: Additional Treatment Strategies for CPVT Patients on Beta-blockers
+  xlabel: Treatment
+  ylabel: Number of patients
+  x_label_fontsize: 12
+  y_label_fontsize: 12
+  title_fontsize: 12
+  x_tick_fontsize: 10
+  y_tick_fontsize: 10
 
 
 

@@ -89,6 +89,8 @@ class ConfigYaml(BaseModel):
 
     reviewer2_1: FigureParams
 
+    s_figure_2: FigureParams
+
     @computed_field
     @property
     def version_for_dir(self) -> str:
