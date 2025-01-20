@@ -1,18 +1,18 @@
-version: 0.3.1
+version: 0.3.2
 figure_palette:
-  default_bar: lightgrey
+  default_bar: black
+  default_hist: lightgrey
   default_dot: dimgray
   box_median_props:
-    color: black
     linewidth: 2
-  cat_palette: Set1
+  cat_palette: colorblind
 figure2:
   panels:
     panel_a:
       fig_size: [ 4.25 , 2.7 ]
-      title: Diagnosis of Patients
-      xlabel: Number of patients
-      ylabel: Diagnosis
+      title: Diagnoses of Patients
+      ylabel: Number of patients
+      xlabel: Diagnosis
     panel_b:
       fig_size: [ 4.25 , 2.7 ]
       title: Age of Onset of CPVT Patients
@@ -20,7 +20,7 @@ figure2:
       ylabel: Number of patients
     panel_c:
       fig_size: [ 4.25 , 4.25 ]
-      #title: Age of Onset vs Incidence of PVT
+      title: Age of Onset vs Incidence of PVT
       #xlabel: Condition
       xticklabels:
         False: No PVT
@@ -28,66 +28,66 @@ figure2:
       ylabel: Age of onset (years)
     panel_d:
       fig_size: [ 4.25, 4.25 ]
-      #title: Age of Onset vs Incidence of Syncope
+      title: Age of Onset vs Incidence of Syncope
       #xlabel: Condition
       xticklabels:
         False: No Syncope
         True: Syncope
       ylabel: Age of onset (years)
 figure3:
-  fig_size: [ 8.5, 4.5 ]
+  fig_size: [ 8.5, 5 ]
   panels:
     panel_a:
-      #title: Heart Structure Abnormality
+      title: Heart Structure Abnormality
       ylabel: Number of patients
       #xlabel: Condition
       xticklabels:
         False: "No heart\nstructure\nabnormality"
         True: "Heart\nstructure\nabnormality"
     panel_b:
-      #title: Exercise-induced PVT
+      title: Exercise-induced PVT
       ylabel: Number of patients
       #xlabel: Condition
       xticklabels:
         False: No PVT
         True: PVT
     panel_c:
-      #title: Exercise-induced Syncope
+      title: Exercise-induced Syncope
       ylabel: Number of patients
       #xlabel: Condition
       xticklabels:
         False: "No\nSyncope"
         True: Syncope
     panel_d:
-      #title: Exercise-induced SCA
+      title: Exercise-induced SCA
       ylabel: Number of patients
       #xlabel: Condition
       xticklabels:
         False: No SCA
         True: SCA
     panel_e:
-      #title: Patient Sex
+      title: Patient Sex
       ylabel: Number of patients
       #xlabel: Sex
       xticklabels:
         female: Female
         male: Male
     panel_f:
-      #title: Inheritance
+      title: Inheritance
       ylabel: Number of variants
       #xlabel: Inheritance
       xticklabels:
         inherited: Inherited
         spontaneous: de novo
     panel_g:
-      #title: Family history of SCD
+      title: Family history of SCD
       ylabel: Number of patients
       #xlabel: Family history
       xticklabels:
         False: "No family\nhistory\nSCD"
         True: "Family\nhistory\nSCD"
     panel_h:
-      #title: Abnormal ECG at Rest
+      title: Abnormal ECG at Rest
       ylabel: Number of patients
       #xlabel: Condition
       xticklabels:
@@ -109,14 +109,16 @@ figure4:
       xlabel: Exon
       ylabel: Age of onset (years)
 figure6:
+  # NOTE: this is only for panels c, d
+  fig_size: [ 8.5, 4.0 ]
   panels:
     panel_c:
-      fig_size: [ 4.25, 4.25 ]
+      #      fig_size: [ 4.25, 4.25 ]
       title: Age of Onset by RYR2 Domain
       xlabel: Domain
       ylabel: Age of onset (years)
     panel_d:
-      fig_size: [ 4.25, 4.5 ]
+      #      fig_size: [ 4.25, 4.5 ]
       title: Age of Onset by RYR2 Subdomain
       xlabel: Subdomain
       ylabel: Age of onset (years)
