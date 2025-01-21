@@ -1,4 +1,4 @@
-version: 0.3.2
+version: 0.3.3
 figure_palette:
   default_bar: black
   default_hist: lightgrey
@@ -105,7 +105,7 @@ figure4:
       xlabel: Exon
       ylabel: Number of variants
     panel_c:
-      title: Age of Onset by Exon
+      title: Age of Onset by RYR2 Exon
       xlabel: Exon
       ylabel: Age of onset (years)
 figure6:

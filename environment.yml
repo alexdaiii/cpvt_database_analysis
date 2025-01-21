@@ -27,6 +27,7 @@ dependencies:
   - conda-forge::r-effectsize
   - conda-forge::r-tidyverse
   - colorcet
+  - statsmodels
   - pip:
       - sqlalchemy
       - psycopg[binary]
