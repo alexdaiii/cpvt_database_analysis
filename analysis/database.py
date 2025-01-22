@@ -60,6 +60,7 @@ class FigurePalette(BaseModel):
     default_dot: str
     box_median_props: dict[Hashable, Any] | None = None
     cat_palette: str
+    text_fontsize: int = 10
 
 class FigureParams(BaseModel):
     fig_size: tuple[float, float] | None = None
@@ -69,11 +70,11 @@ class FigureParams(BaseModel):
     xticklabels: dict[Hashable, str] | None = None
     yticklabels: dict[Hashable, str] | None = None
 
-    x_label_fontsize: int = 10
-    y_label_fontsize: int = 10
-    title_fontsize: int = 10
-    x_tick_fontsize: int = 8
-    y_tick_fontsize: int = 8
+    x_label_fontsize: int = 12
+    y_label_fontsize: int = 12
+    title_fontsize: int = 12
+    x_tick_fontsize: int = 10
+    y_tick_fontsize: int = 10
 
     panels: dict[str, "FigureParams"] | None = None
 
@@ -90,6 +91,7 @@ class ConfigYaml(BaseModel):
     reviewer2_1: FigureParams
 
     s_figure_2: FigureParams
+    s_figure_3: FigureParams
 
     @computed_field
     @property
