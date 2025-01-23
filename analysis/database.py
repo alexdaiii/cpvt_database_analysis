@@ -76,6 +76,8 @@ class FigureParams(BaseModel):
     x_tick_fontsize: int = 10
     y_tick_fontsize: int = 10
 
+    text_fontsize: int = 10
+
     panels: dict[str, "FigureParams"] | None = None
 
 class ConfigYaml(BaseModel):
@@ -92,6 +94,7 @@ class ConfigYaml(BaseModel):
 
     s_figure_2: FigureParams
     s_figure_3: FigureParams
+    s_figure_4: FigureParams
 
     @computed_field
     @property

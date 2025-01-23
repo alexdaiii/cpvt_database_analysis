@@ -1,3 +1,16 @@
+figure_3_properties: &figure_3_properties
+  x_tick_fontsize: 8
+  y_label_fontsize: 10
+  title_fontsize: 9
+  text_fontsize: 10
+
+s_figure_properties: &s_figure_properties
+  x_label_fontsize: 12
+  y_label_fontsize: 12
+  title_fontsize: 12
+  x_tick_fontsize: 10
+  y_tick_fontsize: 10
+
 version: 0.3.3
 figure_palette:
   default_bar: black
@@ -43,7 +56,9 @@ figure3:
       #xlabel: Condition
       xticklabels:
         False: "No heart\nstructure\nabnormality"
+        #        False: "Normal"
         True: "Heart\nstructure\nabnormality"
+      <<: *figure_3_properties
     panel_b:
       title: Exercise-induced PVT
       ylabel: Number of patients
@@ -51,6 +66,7 @@ figure3:
       xticklabels:
         False: No PVT
         True: PVT
+      <<: *figure_3_properties
     panel_c:
       title: Exercise-induced Syncope
       ylabel: Number of patients
@@ -58,6 +74,7 @@ figure3:
       xticklabels:
         False: "No\nSyncope"
         True: Syncope
+      <<: *figure_3_properties
     panel_d:
       title: Exercise-induced SCA
       ylabel: Number of patients
@@ -65,6 +82,7 @@ figure3:
       xticklabels:
         False: No SCA
         True: SCA
+      <<: *figure_3_properties
     panel_e:
       title: Patient Sex
       ylabel: Number of patients
@@ -72,13 +90,15 @@ figure3:
       xticklabels:
         female: Female
         male: Male
+      <<: *figure_3_properties
     panel_f:
       title: Inheritance
       ylabel: Number of variants
       #xlabel: Inheritance
       xticklabels:
         inherited: Inherited
-        spontaneous: de novo
+        spontaneous: "de\nnovo"
+      <<: *figure_3_properties
     panel_g:
       title: Family history of SCD
       ylabel: Number of patients
@@ -86,15 +106,17 @@ figure3:
       xticklabels:
         False: "No family\nhistory\nSCD"
         True: "Family\nhistory\nSCD"
+      <<: *figure_3_properties
     panel_h:
       title: Abnormal ECG at Rest
       ylabel: Number of patients
       #xlabel: Condition
       xticklabels:
-        False: "Normal\nECG\nat rest"
+        False: "Normal"
         True: "Abnormal\nECG\nat rest"
+      <<: *figure_3_properties
 figure4:
-  fig_size: [ 8.5, 2.75 ]
+  fig_size: [ 8.5, 3 ]
   panels:
     panel_a:
       title: Number of CPVT Patients by Variant, Top 20
@@ -149,26 +171,23 @@ reviewer2_1:
         True: SCA
       ylabel: Age of onset (years)
 s_figure_2:
-  fig_size: [ 8.5, 4.5 ]
+  fig_size: [ 3.5, 3.5 ]
+  title: "Age of Onset for\nMissense and Nonsense Variants"
+  #  xlabel: Treatment
+  ylabel: Age of onset (years)
+  <<: *s_figure_properties
+s_figure_3:
+  fig_size: [ 6.5, 3.75 ]
   title: Additional Treatment Strategies for CPVT Patients on Beta-blockers
   xlabel: Treatment
   ylabel: Number of patients
-  x_label_fontsize: 12
-  y_label_fontsize: 12
-  title_fontsize: 12
-  x_tick_fontsize: 10
-  y_tick_fontsize: 10
-s_figure_3:
-  figure_size: [ 8.5, 4.5 ]
+  <<: *s_figure_properties
+s_figure_4:
+  figure_size: [ 6.5, 3 ]
   title: Number of Patients with Atrial Tachycardia by Exon
   xlabel: Exon
   ylabel: Number of patients
-  x_label_fontsize: 12
-  y_label_fontsize: 12
-  title_fontsize: 12
-  x_tick_fontsize: 10
-  y_tick_fontsize: 10
-
+  <<: *s_figure_properties
 
 
 
