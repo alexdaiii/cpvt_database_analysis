@@ -7,6 +7,7 @@ figures
 *.html
 *.pdf
 init
+init-2
 
 ### JetBrains template
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
