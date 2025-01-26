@@ -28,6 +28,7 @@ dependencies:
   - conda-forge::r-tidyverse
   - colorcet
   - statsmodels
+  - pingouin
   - pip:
       - sqlalchemy
       - psycopg[binary]
