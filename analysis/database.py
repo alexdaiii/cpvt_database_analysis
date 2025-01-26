@@ -58,6 +58,7 @@ class FigurePalette(BaseModel):
     default_bar: str
     default_hist: str
     default_dot: str
+    dot_alpha: float = 0.8
     box_median_props: dict[Hashable, Any] | None = None
     cat_palette: str
     text_fontsize: int = 10

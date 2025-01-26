@@ -16,6 +16,7 @@ figure_palette:
   default_bar: black
   default_hist: lightgrey
   default_dot: dimgray
+  dot_alpha: 0.8
   box_median_props:
     linewidth: 2
   cat_palette: colorblind
