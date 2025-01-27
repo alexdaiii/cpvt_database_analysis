@@ -1,3 +1,53 @@
+# environment.yaml
+
+This file is for starting a Conda environment with (most) of the necessary packages to run the code
+
+```yaml
+name: cpvt_database_analysis
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - pip
+  - jupyter
+  - pandas
+  - numpy
+  - seaborn
+  - matplotlib
+  - openpyxl
+  - scipy
+  - tqdm
+  - scikit-learn
+  - scikit-posthocs
+  - nb_conda_kernels
+  - jupyter_contrib_nbextensions
+  - conda-forge::r-base
+  - conda-forge::r-renv
+  - conda-forge::r-irkernel
+  - conda-forge::r-tidyverse
+  - conda-forge::r-essentials
+  - conda-forge::r-here
+  - conda-forge::r-rstatix
+  - conda-forge::r-effectsize
+  - conda-forge::r-tidyverse
+  - colorcet
+  - statsmodels
+  - pingouin
+  - pip:
+      - sqlalchemy
+      - psycopg[binary]
+      - pydantic-settings
+      - pydantic
+      - pyyaml
+      - reportlab
+      - aiohttp
+      # run this after install
+      # pip install cpvt-database-models --index-url https://gitlab.com/api/v4/projects/60969577/packages/pypi/simple
+```
+
+# config.yaml
+
+```yaml
 figure_3_properties: &figure_3_properties
   x_tick_fontsize: 8
   y_label_fontsize: 10
@@ -189,17 +239,5 @@ s_figure_4:
   xlabel: Exon
   ylabel: Number of patients
   <<: *s_figure_properties
-graphic_abstract:
-  panels:
-    bb_pct:
-      fig_size: [ 3.5, 4 ]
-    age_onset_vs_symptoms:
-      fig_size: [ 3.25, 4 ]
-      title: "Age of Onset vs\nIncidence of Syncope"
-      xticklabels:
-        False: No Syncope
-        True: Syncope
-      ylabel: Age of onset (years)
-
-
+```
 

@@ -34,14 +34,15 @@ class PublicationType(Base):
 
 
 
-# make sqalchemy create these tables (note all the other tables are already created)
 @contextmanager
-def get_engine():
+def get_engine(
+    db_uri: str = "postgresql+psycopg://postgres:postgres@localhost:5432/postgres"
+):
     _engine: Engine | None = None
 
     try:
         _engine = sa.create_engine(
-            "postgresql+psycopg://postgres:postgres@localhost:5432/postgres"
+            db_uri
         )
         yield _engine
     except Exception as e:
@@ -96,6 +97,8 @@ class ConfigYaml(BaseModel):
     s_figure_2: FigureParams
     s_figure_3: FigureParams
     s_figure_4: FigureParams
+
+    graphic_abstract: FigureParams
 
     @computed_field
     @property
