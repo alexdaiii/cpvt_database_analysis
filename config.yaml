@@ -173,7 +173,7 @@ reviewer2_1:
       ylabel: Age of onset (years)
 s_figure_2:
   fig_size: [ 3.5, 3.5 ]
-  title: "Age of Onset for\nMissense and Nonsense Variants"
+  title: "Age of Onset for\nMissense and Non-missense Variants"
   #  xlabel: Treatment
   ylabel: Age of onset (years)
   <<: *s_figure_properties
