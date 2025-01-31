@@ -98,7 +98,11 @@ class ConfigYaml(BaseModel):
     s_figure_3: FigureParams
     s_figure_4: FigureParams
 
+    s_figure_treatments: FigureParams
+
     graphic_abstract: FigureParams
+
+    treatment_pcts: FigureParams
 
     @computed_field
     @property

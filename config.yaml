@@ -11,7 +11,9 @@ s_figure_properties: &s_figure_properties
   x_tick_fontsize: 10
   y_tick_fontsize: 10
 
-version: 0.3.3
+
+
+version: 0.3.4
 figure_palette:
   default_bar: black
   default_hist: lightgrey
@@ -189,6 +191,23 @@ s_figure_4:
   xlabel: Exon
   ylabel: Number of patients
   <<: *s_figure_properties
+s_figure_treatments:
+  panels:
+    bb_vs_non_bb:
+      fig_size: [ 2.8333, 3.5 ]
+      title: "Beta-blocker Treatment"
+      ylabel: Number of patients
+      <<: *s_figure_properties
+    pharmacological_treatment:
+      fig_size: [ 2.8333, 3.5 ]
+      title: "Pharmacological Treatment"
+      ylabel: Number of patients
+      <<: *s_figure_properties
+    invasive_treatment:
+      fig_size: [ 2.8333, 3.5 ]
+      title: "Invasive Treatment"
+      ylabel: Number of patients
+      <<: *s_figure_properties
 graphic_abstract:
   panels:
     bb_pct:
@@ -200,6 +219,18 @@ graphic_abstract:
         False: No Syncope
         True: Syncope
       ylabel: Age of onset (years)
+treatment_pcts:
+  panels:
+    flecainide_pct:
+      fig_size: [ 4.25, 4.25 ]
+      #      title: "Flecainide Treatment\nin CPVT Patients"
+      xlabel: "Variant"
+      ylabel: "Percentage of patients"
+    icd_pct:
+      fig_size: [ 4.25, 4.25 ]
+      #      title: "ICD Treatment\nin CPVT Patients"
+      xlabel: "Variant"
+      ylabel: "Percentage of patients"
 
 
 
