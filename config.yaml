@@ -11,7 +11,11 @@ s_figure_properties: &s_figure_properties
   x_tick_fontsize: 10
   y_tick_fontsize: 10
 
-
+s_figure_treat: &s_figure_treat
+  x_tick_fontsize: 10
+  y_label_fontsize: 10
+  title_fontsize: 10
+  text_fontsize: 10
 
 version: 0.3.4
 figure_palette:
@@ -179,12 +183,6 @@ s_figure_2:
   #  xlabel: Treatment
   ylabel: Age of onset (years)
   <<: *s_figure_properties
-s_figure_3:
-  fig_size: [ 6.5, 3.75 ]
-  title: Additional Treatment Strategies for CPVT Patients on Beta-blockers
-  xlabel: Treatment
-  ylabel: Number of patients
-  <<: *s_figure_properties
 s_figure_4:
   figure_size: [ 6.5, 3 ]
   title: Number of Patients with Atrial Tachycardia by Exon
@@ -192,22 +190,28 @@ s_figure_4:
   ylabel: Number of patients
   <<: *s_figure_properties
 s_figure_treatments:
+  fig_size: [ 8.5, 5.5 ]
   panels:
     bb_vs_non_bb:
-      fig_size: [ 2.8333, 3.5 ]
+      fig_size: [ 3.125, 2 ]
       title: "Beta-blocker Treatment"
       ylabel: Number of patients
-      <<: *s_figure_properties
+      <<: *s_figure_treat
     pharmacological_treatment:
-      fig_size: [ 2.8333, 3.5 ]
+      fig_size: [ 3.1875, 3.5 ]
       title: "Pharmacological Treatment"
       ylabel: Number of patients
-      <<: *s_figure_properties
+      <<: *s_figure_treat
     invasive_treatment:
-      fig_size: [ 2.8333, 3.5 ]
+      fig_size: [ 3.1875, 3.5 ]
       title: "Invasive Treatment"
       ylabel: Number of patients
-      <<: *s_figure_properties
+      <<: *s_figure_treat
+    combined:
+      fig_size: [ 7.5, 3.5 ]
+      title: "Treatment in CPVT Patients on Beta-blockers"
+      ylabel: Number of patients
+      <<: *s_figure_treat
 graphic_abstract:
   panels:
     bb_pct:

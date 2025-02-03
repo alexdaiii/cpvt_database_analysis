@@ -95,7 +95,6 @@ class ConfigYaml(BaseModel):
     reviewer2_1: FigureParams
 
     s_figure_2: FigureParams
-    s_figure_3: FigureParams
     s_figure_4: FigureParams
 
     s_figure_treatments: FigureParams
