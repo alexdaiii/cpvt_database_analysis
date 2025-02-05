@@ -212,6 +212,19 @@ s_figure_treatments:
       title: "Treatment in CPVT Patients on Beta-blockers"
       ylabel: Number of patients
       <<: *s_figure_treat
+    figure_6_three_panels:
+      fig_size: [ 8.5, 3.25 ]
+      panels:
+        bb_vs_non_bb:
+          title: "Beta-blocker Treatment"
+          ylabel: Number of patients
+        pharmacological_treatment:
+          title: "Pharmacological Treatment"
+          ylabel: Number of patients
+          x_tick_fontsize: 9
+        invasive_treatment:
+          title: "Invasive Treatment"
+          ylabel: Number of patients
 graphic_abstract:
   panels:
     bb_pct:
@@ -226,12 +239,12 @@ graphic_abstract:
 treatment_pcts:
   panels:
     flecainide_pct:
-      fig_size: [ 4.25, 4.25 ]
+      fig_size: [ 4.25, 3.25 ]
       #      title: "Flecainide Treatment\nin CPVT Patients"
       xlabel: "Variant"
       ylabel: "Percentage of patients"
     icd_pct:
-      fig_size: [ 4.25, 4.25 ]
+      fig_size: [ 4.25, 3.25 ]
       #      title: "ICD Treatment\nin CPVT Patients"
       xlabel: "Variant"
       ylabel: "Percentage of patients"

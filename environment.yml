@@ -26,6 +26,7 @@ dependencies:
   - conda-forge::r-rstatix
   - conda-forge::r-effectsize
   - conda-forge::r-tidyverse
+  - conda-forge::r-readxl
   - colorcet
   - statsmodels
   - pingouin
