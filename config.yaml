@@ -248,6 +248,16 @@ treatment_pcts:
       #      title: "ICD Treatment\nin CPVT Patients"
       xlabel: "Variant"
       ylabel: "Percentage of patients"
+    flecainide_pct_3x2:
+      fig_size: [ 2.83333333333, 3.25 ]
+      #      title: "ICD Treatment\nin CPVT Patients"
+      xlabel: "Variant"
+      ylabel: "Percentage of patients"
+    icd_pct_3x2:
+      fig_size: [ 2.83333333333, 3.25 ]
+      xlabel: "Variant"
+      ylabel: "Percentage of patients"
+
 
 
 
