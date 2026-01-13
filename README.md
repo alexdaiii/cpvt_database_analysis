@@ -2,17 +2,58 @@
 
 This repository contains the code used to analyze the CPVT database and generate
 figures and tables
-for the manuscript "RYR2 Variant Location and Age of Onset in Catecholaminergic
-Polymorphic Ventricular Tachycardia - A
-systematic review and meta-analysis of case-based literature".
+for the manuscript "RYR2 Variants in Catecholaminergic Polymorphic Ventricular 
+Tachycardia Patients: Insights From Protein Structure and Clinical Data".
+
+The analysis code is in the `analysis` directory using Jupyter Notebooks. After
+installation, you can start Jupyter Lab inside the root of the repository with:
+
+```bash
+jupyter lab
+```
+
+(or if you have PyCharm do it for you) 
+
+## Requirements
+
+This project uses Conda/Mamba for environment management. Valid OSs are Linux
+(e.g. Ubuntu 24.04, AMD64)
+To install the dependencies:
+
+```bash
+conda env create -f environment.yaml
+conda activate cpvt_database_analysis
+```
+
+You will also need the `cpvt_database_models` package, which can be installed with:
+
+```bash
+pip install cpvt-database-models --index-url https://gitlab.com/api/v4/projects/60969577/packages/pypi/simple
+```
+
 
 ## Data
+
+The data to generate the figures are located inside this repo as `.xlsx` files.
+Starting from notebook `05+` the data does not require access to the database.
+However, to run notebooks `01` to `04`, you will need access to a PostgreSQL
+database to create the `*.xlsx` files. 
 
 The data used in this analysis is available
 in [Zenodo](https://zenodo.org/doi/10.5281/zenodo.8277761). It requires
 a PostgreSQL database to be loaded. Download the `*.gz.sql` and `*.sql` files
 and place them in the `init` directory
 relative to the root of this repository.
+
+The project should look like this (cpvt_database_analysis is the root directory)
+if you are downloading the data:
+
+```
+cpvt_database_analysis/
+├── analysis/
+├── init/
+... other files ...
+```
 
 A quick way to load the data is to use the `docker-compose.yaml` file in the
 main directory. It assumes that you have Docker and Docker Compose installed.
@@ -23,7 +64,7 @@ on [Docker's website](https://docs.docker.com/engine/install/).
 This configuration will mount
 the `init` directory to `/docker-entrypoint-initdb.d` in the PostgreSQL
 container, which will load the data
-when the container is started (assuming that the database is empty) and create a
+when the container is started and create a new 
 volume for the database data.
 The database will be available at `localhost:5432`.
 
@@ -31,133 +72,22 @@ Also,`pgadmin` is started to allow you to interact with the database, which will
 be available
 at [http://localhost:5050](http://localhost:5050).
 
-To start the database (with the terminal detached), run:
+To start the database (with the terminal detached), run the following command in
+the root of the repository:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
-Currently, the database will take a little over 4GB of space, since it contains
-all the rows from the
-original `biocommons/UTA`
-database. A version with just the RYR2 gene using instructions from
-the [Rust hgvs crate](https://crates.io/crates/hgvs)
-is in the works.
-
-## Requirements
-
-### Poetry
-
-This project uses [Poetry](https://python-poetry.org/) to manage dependencies.
-To install the dependencies, run:
+To stop the database, run the following command in the root of the repository:
 
 ```bash
-poetry install
+docker compose down
 ```
 
-### Pip
-
-Alternatively, you can use `pip` to install the dependencies. To do so, run:
+To remove the database volume (this will delete all data), run the following
+command in the root of the repository:
 
 ```bash
-pip install -r requirements.txt
+docker compose down -v
 ```
-
-### Issues with psycopg
-
-The `hgvs` package requires the `psycopg2` package to be installed. `psycopg2`
-requires PostgreSQL to be installed on
-your system.
-If you don't have PostgreSQL installed, you can use Docker+Postgres and
-the `psycopg2-binary` package instead.
-If you encounter issues with installing `psycopg`, you can install the `hgvs`
-package with the following commands:
-
-```bash
-make install
-```
-
-## R Requirements
-
-The R code is in a Jupyter notebook. If you aren't using Anaconda, you can
-install the required
-packages by following the instructions on
-this [DataCamp blog post](https://www.datacamp.com/blog/jupyter-and-r-markdown-notebooks-with-r).
-
-If you don't want to use Jupyter notebooks, you can copy the R code from the
-notebooks and run it in an R script or
-a Rmd file.
-
-### R Packages
-
-You can run the `install.R` script in r_notebooks to install the required
-packages:
-
-```bash
-Rscript r_notebooks/install.R
-```
-
-## Descriptions of the Python Notebooks
-
-These are in the `notebooks` directory. These are Python Jupyter notebooks.
-These notebooks will automatically
-create a `data` and `figures` directory in the root of the repository to store
-the data and figures generated by the
-notebooks.
-
-All of these notebooks require the PostgreSQL database to be loaded with the
-data.
-
-- helpers
-    - packages for loading env variables and other helper functions
-    - The `settings.py` file expects a .env file in the root directory with the
-      variables listed in the `.env.example`
-      file
-        - If no variables are provided, it will use the default values
-- analysis_1
-    - This notebook contains the code to generate the age of onset vs variant
-      location (exon, domain, subdomain) plots
-      and perform analysis
-    - Performs the Kruskal-Wallis test and Dunn's post-hoc test to determine if
-      there are significant differences
-      between the groups
-    - It also exports the data on age of onset vs variant location for
-      the `analysis_2.r` notebook for follow-up
-      analysis
-- analysis_2
-    - This notebook contains the code to plot the demographics of the patients
-      in the database
-    - It also exports the data about treatments given to patients for
-      the `analysis_1.r` notebook
-- analysis_5
-    - This notebook contains the code to generate tables for the manuscript
-- create_tabular_database
-    - This notebook creates an excel file with the data from the database.
-      Converts the m-n relationships into pivot
-      tables
-
-### Unused Notebooks
-
-- analysis_3
-    - Number of variants that can be converted to genomic/protein coordinates
-- analysis_4
-    - Attempts to fit a GLM with a Gamma distribution to the age of onset data.
-      Not used in the manuscript.
-
-## Descriptions of the R Notebooks
-
-These are in the `r_notebooks` directory. These are R Juptyer notebooks.
-
-- analysis_1
-    - Performs the pairwise Fisher's exact test for the treatments given to
-      patients with variants in different
-      locations
-    - Requires: the data from the `analysis_2` notebook to be exported to a CSV
-      file before running
-- analysis_2
-    - Calculates some effect sizes for age of onset vs variant location (unused
-      in the manuscript since we just report
-      the
-      median and IQR)
-    - Requires: the data from the `analysis_1` notebook to be exported to a CSV
-      file before running
