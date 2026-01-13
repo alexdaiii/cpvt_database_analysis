@@ -1,0 +1,9 @@
+# Set language
+*.xls linguist-language=Visual-Basic
+*.xlsm linguist-language=Visual-Basic
+
+# Register as binary files
+*.xls -crlf -diff -merge
+*.xlsm -crlf -diff -merge
+
+*.parquet binary
